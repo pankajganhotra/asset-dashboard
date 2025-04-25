@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --placeholder-color: #a0a0a0;
+}
+
+[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --placeholder-color: #555555; 
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, sans-serif);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+::placeholder {
+  color: var(--placeholder-color);
+  opacity: 1; 
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+  opacity: 1;
+}
