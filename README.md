@@ -86,7 +86,34 @@ CoinGecko API (free tier): **50 requests/minute/IP**
 ## 📂 Folder Structure
 ```txt
 ├── README.md
-├── app
+├── [symbol]
+│   └── page.tsx
+├── components
+│   ├── AssetDetailModal.tsx
+│   ├── AssetFilters.tsx
+│   ├── GridView
+│   ├── ListView
+│   ├── Navbar
+│   └── SearchBar.tsx
+├── context
+│   └── AssetsContext.tsx
+├── favicon.ico
+├── globals.css
+├── hooks
+│   ├── useAssetBySymbol.ts
+│   ├── useAssets.ts
+│   └── useAuth.ts
+├── layout.tsx
+├── page.tsx
+├── screens
+│   ├── AssetDetail.tsx
+│   └── Home.tsx
+├── types
+│   ├── asset.ts
+│   └── global.d.ts
+└── utils
+    ├── coingecko.ts
+    └── fetchWithRetry.ts
 ├── dist
 ├── eslint.config.mjs
 ├── next-env.d.ts
@@ -129,3 +156,13 @@ yarn dev
 npm run build
 npm run start
 ```
+
+## Potential Areas for Future Improvements:
+
+### 1. **Performance Optimization**:
+- **Data Preprocessing**: In future versions, we could explore strategies for dynamically fetching token data based on user interaction, reducing the reliance on static data generation for every token ID.
+- **Lazy Loading**: Although static data helps with initial render speed, lazy loading of additional data when the user scrolls or interacts with elements can optimize performance for larger datasets.
+
+### 2. **UI Enhancements**:
+- **Skeleton Loader/Spinners**: The user interface could benefit from the implementation of skeleton loaders or spinners to indicate that data is being fetched or processed. This would provide a smoother experience for users, especially when the app is waiting for external data.
+- **Error Handling UI**: Add more comprehensive error handling UI components for failed data fetches or incorrect token ID lookups to ensure users have clear feedback about any issues.
